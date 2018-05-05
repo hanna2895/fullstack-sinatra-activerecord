@@ -2,7 +2,10 @@ class ItemController < ApplicationController
 
 	#index route
 	get "/" do
-		"this is get route in ItemController"
+		@items = Item.all
+		# @items.to_json
+		@page_title = "Index of Items"
+		erb :item_index
 	end
 
 	#add route
@@ -27,6 +30,7 @@ class ItemController < ApplicationController
 		@item.save
 
 		@item.to_json
+		redirect '/items'
 	end
 
 end
