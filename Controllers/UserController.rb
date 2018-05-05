@@ -19,6 +19,7 @@ class UserController < ApplicationController
 			session[:username] = @user.username
 			session[:logged_in] = true
 			session[:message] = "Logged in as #{@user.username}"
+			session[:user_id] = @user.id
 			redirect '/items'
 
 		else
@@ -35,12 +36,14 @@ class UserController < ApplicationController
 		session[:logged_in] = true
 		session[:username] = @user.username
 		session[:message] = "Thank you for registering (as #{@user.username}). Enjoy the site!"
+		session[:user_id] = @user.id
 		redirect '/items'
 	end
 
 	get '/logout' do
 		session[:username] = nil
 		session[:logged_in] = false
+		session[:user_id] = nil
 		redirect '/user/login'
 	end
 
