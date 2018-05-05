@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 	<title><%=@page_title%></title>
+	<link rel="stylesheet" type="css" href="/css/style.css">
 </head>
 <body>
 
 	<nav>
-		<p style="display: inline-block;">Nav:
+		<p>Nav:
 			<a href="/items">Item List</a>
 			<a href="/items/add">Add Items</a>
 		</p>
 	</nav>
 
-	<h1 style="border: 1px solid red; border-radius: 5px;" id="app-name">Awesome site!</h1>
+	<h1 id="app-name">Awesome site!</h1>
 
 	<%=yield%>
 

@@ -12,6 +12,7 @@ class ApplicationController < Sinatra::Base
 	use Rack::MethodOverride
 	set :method_override, true
 
+	set :public_dir, '../public'  #File.expand_path('../public', File.dirname('style.css'))
 	set :views, File.expand_path('../views', 'index.erb')
 
 
