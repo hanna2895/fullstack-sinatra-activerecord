@@ -29,6 +29,8 @@ class ItemController < ApplicationController
 		@item.user_id = 1 #for now
 		@item.save
 
+		session[:message] = "You added item \##{@item.id}"
+
 		@item.to_json
 		redirect '/items'
 	end
@@ -37,6 +39,8 @@ class ItemController < ApplicationController
 	delete '/:id' do
 		@item = Item.find params[:id]
 		@item.destroy
+
+		session[:message] = "You deleted item \##{@item.id}"
 		redirect '/items'
 	end
 
@@ -53,6 +57,8 @@ class ItemController < ApplicationController
 
 		@item.title = params[:title]
 		@item.save
+
+		session[:message] = "You updated item \##{@item.id}"
 		redirect '/items'
 	end
 
