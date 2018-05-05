@@ -33,11 +33,29 @@ class ItemController < ApplicationController
 		redirect '/items'
 	end
 
+	# delete route
 	delete '/:id' do
 		@item = Item.find params[:id]
 		@item.destroy
 		redirect '/items'
 	end
+
+	# edit route
+	get '/edit/:id' do
+		@item = Item.find params[:id]
+		@page = "Edit Item#{@item.id}"
+		erb :edit_item
+	end
+
+	patch '/:id' do
+		@items = Item.where(id: params[:id])
+		@item = @items[0]
+
+		@item.title = params[:title]
+		@item.save
+		redirect '/items'
+	end
+
 
 end
 
