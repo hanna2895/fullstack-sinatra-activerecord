@@ -8,6 +8,7 @@ require './Controllers/ItemController'
 
 #models
 require './models/ItemModel'
+require '.models/UserModel'
 
 # route mapping
 map ('/') {
