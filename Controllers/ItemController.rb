@@ -18,10 +18,15 @@ class ItemController < ApplicationController
 
 	# create route
 	post '/' do
-		puts "Here is the params -----------------"
 		pp params
-		puts "---------------------------"
-		'you posted, check your terminal'
+
+		# this is how you add something with ActiveRecord
+		@item = Item.new
+		@item.title = params[:title]
+		@item.user_id = 1 #for now
+		@item.save
+
+		@item.to_json
 	end
 
 end

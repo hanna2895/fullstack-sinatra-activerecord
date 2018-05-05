@@ -6,6 +6,9 @@ require 'sinatra/activerecord'
 require './Controllers/ApplicationController'
 require './Controllers/ItemController'
 
+#models
+require './models/ItemModel'
+
 # route mapping
 map ('/') {
 	run ApplicationController

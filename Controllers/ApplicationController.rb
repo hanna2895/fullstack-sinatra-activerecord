@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
 
 	ActiveRecord::Base.establish_connection(
 		:adapter => 'postgresql',
-		:database => 'items'
+		:database => 'item'
 	)
 
 	set :views, File.expand_path('../views', 'index.erb')
