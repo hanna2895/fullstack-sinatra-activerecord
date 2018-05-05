@@ -16,4 +16,13 @@ class ItemController < ApplicationController
 		erb :add_item
 	end
 
+	# create route
+	post '/' do
+		puts "Here is the params -----------------"
+		pp params
+		puts "---------------------------"
+		'you posted, check your terminal'
+	end
+
 end
+
