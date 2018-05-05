@@ -5,10 +5,11 @@ require 'sinatra/activerecord'
 # controllers
 require './Controllers/ApplicationController'
 require './Controllers/ItemController'
+require './Controllers/UserController'
 
 #models
 require './models/ItemModel'
-require '.models/UserModel'
+require './models/UserModel'
 
 # route mapping
 map ('/') {
@@ -17,4 +18,8 @@ map ('/') {
 
 map ('/items') {
 	run ItemController
+}
+
+map ('/user') {
+	run UserController
 }
