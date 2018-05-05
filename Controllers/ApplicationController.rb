@@ -13,6 +13,7 @@ class ApplicationController < Sinatra::Base
 
 
 	get '/' do
+		@page_title = 'hello'
 		erb :index
 	end
 
