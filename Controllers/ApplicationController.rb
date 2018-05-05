@@ -9,6 +9,9 @@ class ApplicationController < Sinatra::Base
 		:database => 'item'
 	)
 
+	use Rack::MethodOverride
+	set :method_override, true
+
 	set :views, File.expand_path('../views', 'index.erb')
 
 
